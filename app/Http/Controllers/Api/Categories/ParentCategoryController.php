@@ -42,6 +42,6 @@ class ParentCategoryController extends Controller
     public function destroy(ParentCategory $parentCategory): Application|Response|\Illuminate\Contracts\Foundation\Application|ResponseFactory
     {
         $this->parentCategoryService->destroy($parentCategory);
-        return response("parent category has been deleted", 400);
+        return response('parent category has been deleted', 400);
     }
 }

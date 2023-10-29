@@ -38,6 +38,6 @@ class SubCategoryController extends Controller
     public function destroy(SubCategory $subCategory): void
     {
         $this->subCategoryService->destroy($subCategory);
-        response("subCategory has been deleted", 404);
+        response('subCategory has been deleted', 404);
     }
 }

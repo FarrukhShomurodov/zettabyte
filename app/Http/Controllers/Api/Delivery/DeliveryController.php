@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\DeliveryRequest;
 use App\Http\Resources\DeliveryResponce;
 use App\Models\Delivery;
-use App\Service\DeliveryService;
+use App\Services\DeliveryService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
