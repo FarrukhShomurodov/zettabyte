@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Delivery\DeliveryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 //});
 
 
+Route::prefix('delivery')->name('delivery.')->group(function (){
+   Route::get('/',[DeliveryController::class, 'index']);
+   Route::post('/',[DeliveryController::class, 'store']);
+   Route::put('/{delivery}',[DeliveryController::class, 'update']);
+   Route::delete('/{delivery}',[DeliveryController::class, 'destroy']);
+});
