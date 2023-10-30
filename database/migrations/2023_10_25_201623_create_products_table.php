@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('images');
             $table->float('price');
             $table->text('description');
-            $table->foreignId('delivery_id')->constrained('deliveries');
             $table->integer('sold_quantity');
             $table->timestamps();
         });
