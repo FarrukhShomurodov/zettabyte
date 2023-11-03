@@ -1,9 +1,10 @@
-w<?php
+<?php
 
 use App\Http\Controllers\Api\Categories\CategoryController;
 use App\Http\Controllers\Api\Categories\ParentCategoryController;
 use App\Http\Controllers\Api\Categories\SubCategoryController;
 use App\Http\Controllers\Api\Delivery\DeliveryController;
+use App\Http\Controllers\Api\ProductController;
 use Illuminate\Support\Facades\Route;
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -37,4 +38,11 @@ Route::prefix('delivery')->name('delivery.')->group(function () {
     Route::post('/', [DeliveryController::class, 'store']);
     Route::put('/{delivery}', [DeliveryController::class, 'update']);
     Route::delete('/{delivery}', [DeliveryController::class, 'destroy']);
+});
+
+Route::prefix('product')->name('products.')->group(function (){
+   Route::get('/',[ProductController::class, 'index']);
+   Route::post('/',[ProductController::class, 'store']);
+   Route::put('/{product}',[ProductController::class, 'update']);
+   Route::delete('/{product}',[ProductController::class, 'destroy']);
 });

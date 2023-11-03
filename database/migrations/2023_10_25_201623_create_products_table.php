@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('images');
             $table->float('price');
             $table->text('description');
-            $table->integer('sold_quantity');
+            $table->integer('sold_quantity')->default(0);
+            $table->string('youtube_link')->nullable();
+            $table->string('video')->nullable();
             $table->timestamps();
         });
     }
