@@ -8,12 +8,12 @@ class CategoryService
 {
     public function index()
     {
-        return Category::query()->get();
+        return Category::all();
     }
 
     public function store($validated)
     {
-        return Category::query()->create($validated);
+        return Category::create($validated);
     }
 
     public function update(Category $category, $validated)
@@ -23,7 +23,7 @@ class CategoryService
 
     public function destroy(Category $category)
     {
-        $category->subCategory()->delete();
+        $category->sub_category()->delete();
         return $category->delete();
     }
 }

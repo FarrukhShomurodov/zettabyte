@@ -8,12 +8,12 @@ class ParentCategoryService
 {
     public function index()
     {
-        return ParentCategory::query()->get();
+        return ParentCategory::all();
     }
 
     public function store($validated)
     {
-        return ParentCategory::query()->create($validated);
+        return ParentCategory::create($validated);
     }
 
     public function update(ParentCategory $parentCategory, $validated)
@@ -25,7 +25,7 @@ class ParentCategoryService
     {
         $categories = $parentCategory->category()->get();
         foreach ($categories as $category){
-            $category->subCategory()->delete();
+            $category->sub_category()->delete();
         }
         $parentCategory->category()->delete();
         return $parentCategory->delete();
